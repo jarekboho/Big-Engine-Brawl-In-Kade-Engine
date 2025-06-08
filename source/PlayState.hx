@@ -2549,7 +2549,6 @@ if (isStoryMode)
 				{
 					trace("BPM CHANGE to " + timingSegBpm);
 					Conductor.changeBPM(timingSegBpm, false);
-					//changeNotes();
 				}
 			}
 
