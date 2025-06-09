@@ -173,6 +173,65 @@ if(freeplayStage != 'sadstory' && freeplayStage != 'splendid' && freeplayStage !
 
 		camPos = new FlxPoint(boyfriend.getMidpoint().x - 100, boyfriend.getMidpoint().y - 100);
 
+					switch (freeplayStage)
+					{
+						case 'puffball':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - 0;
+							camPos.y += -180 + 300;
+						case 'endlessremix':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - 0;
+							camPos.y += -180 + 300;
+						case 'harbor':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - 0;
+							camPos.y += -180 + 250;
+						case 'sadstory':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - 0;
+							camPos.y += -180 + 0;
+						case 'splendid':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - -100;
+							camPos.y += -180 + 100;
+						case 'ugh':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - -100;
+							camPos.y += -180 + 100;
+						case 'indignation':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - 270;
+							camPos.y += -180 + 70;
+						case 'godraysremix':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - 270;
+							camPos.y += -180 + 70;
+						case 'loathed':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= -500 - 0;
+							camPos.y += 40 + 0;
+						case 'oldreliable':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 20 - 150;
+							camPos.y += 180 + 100;
+						case 'confusion':
+							camPos.x = boyfriend.getMidpoint().x - 100;
+							camPos.y = boyfriend.getMidpoint().y - 100;
+							camPos.x -= 130 - 0;
+							camPos.y += -180 + 0;
+					}
+
 		camFollow = new FlxObject(0, 0, 1, 1);
 
 		camFollow.setPosition(camPos.x, camPos.y);
