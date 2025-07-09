@@ -711,21 +711,6 @@ if(Stage.curStage != 'sadstory' && Stage.curStage != 'splendid' && Stage.curStag
 		else
 		camPos = new FlxPoint(gf.getGraphicMidpoint().x + -300, gf.getGraphicMidpoint().y + 140);
 
-		switch (dad.curCharacter)
-		{
-			case 'gf':
-				if (!stageTesting)
-					dad.setPosition(gf.x, gf.y);
-				gf.visible = false;
-				if (isStoryMode)
-				{
-					camPos.x += 600;
-					tweenCamIn();
-				}
-			case 'dad':
-				camPos.x += 400;
-		}
-
 		Stage.update(0);
 
 		if (loadRep)
