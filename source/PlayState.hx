@@ -264,13 +264,10 @@ class PlayState extends MusicBeatState
 	public static var theFunne:Bool = true;
 
 	var inCutscene:Bool = false;
-	var usedTimeTravel:Bool = false;
 
 	public static var stageTesting:Bool = false;
 
 	var camPos:FlxPoint;
-
-	public var randomVar = false;
 
 	public static var Stage:Stage;
 
@@ -2814,39 +2811,6 @@ if (isStoryMode)
 			}
 			#end
 		}
-
-		if (FlxG.keys.justPressed.TWO && songStarted)
-		{
-			if (!usedTimeTravel && Conductor.songPosition + 10000 < FlxG.sound.music.length)
-			{
-				usedTimeTravel = true;
-				FlxG.sound.music.pause();
-				vocals.pause();
-				Conductor.songPosition += 10000;
-				notes.forEachAlive(function(daNote:Note)
-				{
-					if (daNote.strumTime - 500 < Conductor.songPosition)
-					{
-						daNote.active = false;
-						daNote.visible = false;
-
-						daNote.kill();
-						notes.remove(daNote, true);
-						daNote.destroy();
-					}
-				});
-
-				FlxG.sound.music.time = Conductor.songPosition;
-				FlxG.sound.music.play();
-
-				vocals.time = Conductor.songPosition;
-				vocals.play();
-				new FlxTimer().start(0.5, function(tmr:FlxTimer)
-				{
-					usedTimeTravel = false;
-				});
-			}
-		}
 		#end
 
 		if (skipActive && Conductor.songPosition >= skipTo)
@@ -3169,8 +3133,6 @@ if (isStoryMode)
 
 		if (health <= 0 && !cannotDie)
 		{
-			if (!usedTimeTravel)
-			{
 				boyfriend.stunned = true;
 
 				persistentUpdate = false;
@@ -3203,9 +3165,6 @@ if (isStoryMode)
 					+ " | Misses: "
 					+ misses, iconRPC);
 				#end
-			}
-			else
-				health = 1;
 		}
 		if (!inCutscene && FlxG.save.data.resetButton && canReset)
 		{
