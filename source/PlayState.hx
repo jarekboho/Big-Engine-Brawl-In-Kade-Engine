@@ -263,7 +263,6 @@ class PlayState extends MusicBeatState
 
 	public static var theFunne:Bool = true;
 
-	var funneEffect:FlxSprite;
 	var inCutscene:Bool = false;
 	var usedTimeTravel:Bool = false;
 
